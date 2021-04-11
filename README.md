@@ -67,7 +67,7 @@ We prefer feature module packaging structure. Each package has its own <ins> dat
 
 
 ### APK file
-You can find example .apk file in [here](https://github.com/vedatkilic/df-movies-catalog-android/tree/develop/apkFile)
+You can find example .apk file in [here](apkFile/)
 
 ### Example usage video
-You can find usage video file in [here](https://github.com/vedatkilic/df-movies-catalog-android/tree/develop/video)
+You can find usage video file in [here](video/)

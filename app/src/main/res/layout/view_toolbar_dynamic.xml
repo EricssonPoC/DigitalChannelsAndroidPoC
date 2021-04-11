@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.dfmovies.android.core.util.widget.DynamicToolbarViewState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/viewMainToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBackButton"
+            isVisible="@{viewState.leftIconVisibility}"
+            srcVector="@{viewState.icon}"
+            srcVectorTint="@{viewState.iconTint}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_16dp"
+            android:paddingTop="@dimen/margin_16dp"
+            android:paddingEnd="@dimen/margin_16dp"
+            android:paddingBottom="@dimen/margin_16dp"
+            app:layout_constraintBottom_toBottomOf="@id/viewMainToolbar"
+            app:layout_constraintStart_toStartOf="@id/viewMainToolbar"
+            app:layout_constraintTop_toTopOf="@id/viewMainToolbar"
+            tools:ignore="RtlSymmetry"
+            tools:srcCompat="@drawable/ic_back" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewTitle"
+            style="@style/PrimaryText.Regular.16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:gravity="center"
+            android:text="@{viewState.title}"
+            app:layout_constraintBottom_toBottomOf="@id/viewMainToolbar"
+            app:layout_constraintEnd_toStartOf="@id/imageViewActionButton"
+            app:layout_constraintStart_toEndOf="@id/imageViewBackButton"
+            app:layout_constraintTop_toTopOf="@id/viewMainToolbar"
+            tools:text="Title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_16dp"
+            android:paddingTop="@dimen/margin_16dp"
+            android:paddingEnd="@dimen/margin_16dp"
+            android:paddingBottom="@dimen/margin_16dp"
+            app:layout_constraintBottom_toBottomOf="@id/viewMainToolbar"
+            app:layout_constraintEnd_toEndOf="@id/viewMainToolbar"
+            app:layout_constraintTop_toTopOf="@id/viewMainToolbar"
+            android:visibility="invisible"
+            tools:ignore="RtlSymmetry"
+            tools:srcCompat="@drawable/ic_back" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Df Movies</string>
+
+    <string name="generic_error_message">Something went wrong. Please try again.</string>
+    <string name="connection_error_message">No internet connection. Please try again.</string>
+    <string name="login_header_text">Login with Email</string>
+    <string name="login_email_text">Email</string>
+    <string name="login_password_text">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_info_text">This product uses the TMDb API but is not endorsed or certified by TMDb</string>
+    <string name="application_display_name">The Movie Manager</string>
+    <string name="tab_search_text">Search</string>
+    <string name="tab_watchlist_text">Watchlist</string>
+    <string name="tab_favorite_text">Favorites</string>
+    <string name="hint_search_movie">Search Movie</string>
+    <string name="discover_page_title">Discover Movies</string>
+    <string name="watchlist_page_title">Watchlist</string>
+    <string name="watchlist_page_empty_message">There is no movie in your watchlist</string>
+    <string name="favorite_page_title">Favorites</string>
+    <string name="favorite_page_empty_message">There is no movie in your favorite</string>
+    <string name="go_to_search_button_text">Go to Search</string>
+
+    <string name="error_email_text">Please enter a valid email address!</string>
+    <string name="error_password_text">Please enter your password!</string>
+</resources>

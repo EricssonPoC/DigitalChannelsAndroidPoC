@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.dfmovies.android.main.ui.watchlist.WatchlistPageViewState" />
+
+        <variable
+            name="viewStateStatus"
+            type="com.dfmovies.android.main.ui.watchlist.WatchlistPageStatusViewState" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dfmovies.android.core.util.widget.DynamicToolbarView
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.erkutaras.statelayout.StateLayout
+            android:id="@+id/stateLayout"
+            style="@style/StateLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:showState="@{viewStateStatus.getStateInfo(context)}"
+            tools:sl_state="content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewItems"
+                recyclerViewItems="@{viewState.movies}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_movie"
+                tools:visibility="visible" />
+
+        </com.erkutaras.statelayout.StateLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

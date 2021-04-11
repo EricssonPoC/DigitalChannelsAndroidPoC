@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.dfmovies.android.main.ui.detail.MovieDetailPageViewState" />
+
+        <variable
+            name="viewStateStatus"
+            type="com.dfmovies.android.main.ui.detail.MovieDetailPageStatusViewState" />
+
+    </data>
+
+    <com.erkutaras.statelayout.StateLayout
+        style="@style/StateLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:showState="@{viewStateStatus.stateInfo}"
+        tools:sl_state="content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.dfmovies.android.core.util.widget.DynamicToolbarView
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCover"
+                imageUrl="@{viewState.coverImageUrl}"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                tools:src="@drawable/image_no_poster" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20dp"
+                android:layout_marginBottom="@dimen/margin_4dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewCover"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_star" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/PrimaryText.Regular.12.White75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4dp"
+                android:text="@{viewState.voteRate}"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewStar"
+                app:layout_constraintStart_toEndOf="@id/imageViewStar"
+                app:layout_constraintTop_toTopOf="@id/imageViewStar"
+                tools:text="4.2" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/PrimaryText.Medium.16.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:text="@{viewState.originalTitle}"
+                app:layout_constraintBottom_toTopOf="@id/imageViewStar"
+                app:layout_constraintStart_toStartOf="@id/imageViewStar"
+                tools:text="Breach" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/PrimaryText.Regular.12.White75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4dp"
+                android:layout_marginEnd="@dimen/margin_20dp"
+                android:drawablePadding="@dimen/padding_4dp"
+                android:gravity="center_vertical"
+                android:text="@{viewState.date}"
+                app:drawableEndCompat="@drawable/ic_date"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewStar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageViewStar"
+                tools:text="17/12/2020" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewDescription"
+                style="@style/PrimaryText.Medium.16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingTop="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:text="@{viewState.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewCover"
+                tools:text="Breach" />
+
+            <View
+                android:id="@+id/viewBottom"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/color_divider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewWatchlist"
+                srcVector="@{viewState.watchlistIcon}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20dp"
+                android:button="@drawable/selector_movie_detail_watchlist"
+                app:layout_constraintBottom_toBottomOf="@id/viewBottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/viewBottom"
+                tools:src="@drawable/ic_tab_watchlist" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewFavorite"
+                srcVector="@{viewState.favoriteIcon}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_32dp"
+                android:button="@drawable/selector_movie_detail_favourite"
+                app:layout_constraintBottom_toBottomOf="@id/viewBottom"
+                app:layout_constraintStart_toEndOf="@id/imageViewWatchlist"
+                app:layout_constraintTop_toTopOf="@id/viewBottom"
+                tools:src="@drawable/ic_tab_favourite" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.erkutaras.statelayout.StateLayout>
+</layout>

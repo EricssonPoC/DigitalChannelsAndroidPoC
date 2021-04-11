@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="PrimaryText">
+        <item name="android:textColor">@color/color_black</item>
+    </style>
+
+    <style name="PrimaryText.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="PrimaryText.Title.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing" tools:targetApi="lollipop">0.03</item>
+    </style>
+
+    <!-- PrimaryText Proxima Medium-->
+    <style name="PrimaryText.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="PrimaryText.Medium.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.20.Pink">
+        <item name="android:textColor">@color/color_red</item>
+    </style>
+
+    <style name="PrimaryText.Medium.20.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Medium.20.BlueGreyDark">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="PrimaryText.Medium.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.14.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Medium.14.Red">
+        <item name="android:textColor">@color/color_red</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.16.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Medium.16.ColorPrimaryDark">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="PrimaryText.Medium.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="PrimaryText.Medium.12.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="PrimaryText.Medium.10.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.Medium.12.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.Medium.14.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.Medium.30">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <!---->
+
+    <!-- PrimaryText Proxima Regular-->
+    <style name="PrimaryText.Regular">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="PrimaryText.Regular.8">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.8.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Regular.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.16.White40">
+        <item name="android:textColor">@color/color_white_40</item>
+    </style>
+
+    <style name="PrimaryText.Regular.16.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Regular.16.Grey30">
+        <item name="android:textColor">@color/color_grey_30</item>
+    </style>
+
+    <style name="PrimaryText.Regular.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.14.Grey30">
+        <item name="android:textColor">@color/color_grey_30</item>
+    </style>
+
+    <style name="PrimaryText.Regular.14.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Regular.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.24">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.10.Red">
+        <item name="android:textColor">@color/color_red</item>
+    </style>
+
+    <style name="PrimaryText.Regular.10.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Regular.12.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Regular.12.White75">
+        <item name="android:textColor">@color/color_white_75</item>
+    </style>
+
+    <style name="PrimaryText.Regular.12.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.Regular.7">
+        <item name="android:textSize">7sp</item>
+    </style>
+
+    <style name="PrimaryText.Regular.11">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+
+    <!---->
+
+    <!-- PrimaryText Proxima Light-->
+    <style name="PrimaryText.Light">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="PrimaryText.Light.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="PrimaryText.Light.12">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="PrimaryText.Light.14">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryText.Light.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryText.Light.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!---->
+
+    <!-- PrimaryText Proxima Bold-->
+    <style name="PrimaryText.Bold">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PrimaryText.Bold.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.14.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.Bold.14.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Bold.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.16.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.Bold.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.18.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="PrimaryText.Bold.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.30">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.26">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="PrimaryText.Bold.34">
+        <item name="android:textSize">34sp</item>
+    </style>
+    <!---->
+
+
+    <!-- PrimaryText Sofia Medium-->
+    <style name="PrimaryText.SofiaMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.20">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.20.BlueGreyDark">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.22">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.16.White">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.16.Red">
+        <item name="android:textColor">@color/color_red</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.12.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.12.White30">
+        <item name="android:textColor">@color/color_white_30</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.10.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.12.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.14.Blue">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryText.SofiaMedium.30">
+        <item name="android:textSize">30sp</item>
+    </style>
+    <!---->
+
+</resources>

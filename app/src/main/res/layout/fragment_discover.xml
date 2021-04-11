@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewStateStatus"
+            type="com.dfmovies.android.main.ui.discover.DiscoverMoviePageStatusViewState" />
+    </data>
+
+    <com.erkutaras.statelayout.StateLayout
+        style="@style/StateLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:showState="@{viewStateStatus.stateInfo}"
+        tools:sl_state="content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.dfmovies.android.core.util.widget.DynamicToolbarView
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewSearchBackground"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/color_neon_blue"
+                app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSearch"
+                style="@style/PrimaryText.Regular.14"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:background="@drawable/bg_search"
+                android:drawableStart="@drawable/ic_tab_search"
+                android:nextFocusLeft="@+id/editTextSearch"
+                android:nextFocusUp="@+id/editTextSearch"
+                android:hint="@string/hint_search_movie"
+                android:padding="@dimen/padding_16dp"
+                android:paddingStart="@dimen/padding_10dp"
+                android:paddingEnd="@dimen/padding_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/viewSearchBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/viewSearchBackground" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewItems"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewSearchBackground"
+                tools:listitem="@layout/item_search"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.erkutaras.statelayout.StateLayout>
+</layout>

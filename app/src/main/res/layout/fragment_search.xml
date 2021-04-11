@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.dfmovies.android.main.ui.search.SearchPageViewState" />
+
+        <variable
+            name="viewStateStatus"
+            type="com.dfmovies.android.main.ui.search.SearchPageStatusViewState" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/viewSearchBackground"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/color_neon_blue"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_16dp"
+            android:paddingTop="@dimen/margin_16dp"
+            android:paddingEnd="@dimen/margin_16dp"
+            android:paddingBottom="@dimen/margin_16dp"
+            android:tint="@color/color_black"
+            app:layout_constraintBottom_toBottomOf="@id/viewSearchBackground"
+            app:layout_constraintStart_toStartOf="@id/viewSearchBackground"
+            app:layout_constraintTop_toTopOf="@id/viewSearchBackground"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextSearch"
+            style="@style/PrimaryText.Regular.14"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:background="@drawable/bg_search"
+            android:drawableStart="@drawable/ic_tab_search"
+            android:hint="@string/hint_search_movie"
+            android:imeOptions="actionDone"
+            android:padding="@dimen/padding_16dp"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingEnd="@dimen/padding_24dp"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@id/viewSearchBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewBackButton"
+            app:layout_constraintTop_toTopOf="@id/viewSearchBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageClearSearchQuery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/margin_8dp"
+            app:isVisible="@{viewState.clearSearchButtonVisible}"
+            app:layout_constraintBottom_toBottomOf="@id/editTextSearch"
+            app:layout_constraintEnd_toEndOf="@id/editTextSearch"
+            app:layout_constraintTop_toTopOf="@id/editTextSearch"
+            app:srcCompat="@drawable/ic_cancel" />
+
+        <com.erkutaras.statelayout.StateLayout
+            style="@style/StateLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewSearchBackground"
+            app:showState="@{viewStateStatus.stateInfo}"
+            tools:sl_state="content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_search"
+                tools:visibility="visible" />
+
+        </com.erkutaras.statelayout.StateLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

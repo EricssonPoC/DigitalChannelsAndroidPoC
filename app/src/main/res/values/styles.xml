@@ -1,0 +1,56 @@
+<resources>
+
+    <style name="DefaultInputStyle" parent="PrimaryText.Regular.16">
+        <item name="android:paddingStart">@dimen/padding_24dp</item>
+        <item name="android:paddingEnd">@dimen/padding_24dp</item>
+        <item name="android:layout_height">@dimen/height_default_input</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">@color/color_grey</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+
+    <style name="FormTextFieldStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <item name="boxStrokeColor">@color/colorPrimaryDark</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/color_red</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="hintTextColor">@color/colorPrimaryDark</item>
+
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+    </style>
+
+
+
+    <style name="TextInputLayoutAppearance" parent="@android:style/TextAppearance">
+        <!-- reference our hint & error styles -->
+        <item name="android:textColor">@color/color_black</item>
+
+    </style>
+
+    <style name="FormErrorText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/color_red</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <style name="FormEditTexStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="StateLayoutStyle">
+        <item name="android:id">@id/stateLayout</item>
+        <item name="sl_loadingLayout">@layout/layout_loading</item>
+        <item name="sl_loadingWithContentLayout">@layout/layout_loading</item>
+        <item name="sl_state">content</item>
+    </style>
+
+</resources>

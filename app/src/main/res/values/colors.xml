@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#54BAEE</color>
+    <color name="colorPrimaryDark">#113999</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="color_app_background">#F4F6F7</color>
+
+    <color name="color_input_backgroud">#71D7F6</color>
+    <color name="color_loading_background">#44313232</color>
+
+    <color name="color_white">#ffffff</color>
+    <color name="color_white_25">#40ffffff</color>
+    <color name="color_white_30">#4dffffff</color>
+    <color name="color_white_40">#66ffffff</color>
+    <color name="color_white_50">#80ffffff</color>
+    <color name="color_white_75">#bfffffff</color>
+
+    <color name="color_black">#000000</color>
+    <color name="color_black_30">#4D000000</color>
+    <color name="color_red">#de7879</color>
+    <color name="color_red_75">#bfde7879</color>
+    <color name="color_grey">#a9a9a9</color>
+    <color name="color_grey_30">#4D4D4D</color>
+    <color name="color_mercury">#e5e5e5</color>
+    <color name="color_blue_grey_dark">#1b1b4e</color>
+    <color name="color_pale_grey">#f2f4f7</color>
+
+    <color name="color_tab_selected">#1C50C2</color>
+    <color name="color_tab_unselected">#818181</color>
+    <color name="color_divider">#e3e3e3</color>
+    <color name="color_blue_grey">#8d8d9d</color>
+    <color name="color_grey_68">#adadad</color>
+    <color name="color_neon_blue">#01e4f6</color>
+
+    <color name="color_status_bar_light">#f5f5f5</color>
+    <color name="color_button_disabled">#dddddd</color>
+    <color name="color_text_disabled">#888888</color>
+
+</resources>

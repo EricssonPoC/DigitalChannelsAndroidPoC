@@ -1,0 +1,15 @@
+.gradle/
+.idea/
+captures/
+/app/build/
+/app/lint/
+build/
+lint/
+local.properties
+*.iml
+/fastlane/metadata/
+/fastlane/report.xml
+/fastlane/README.md
+/vendor
+.bundle/config
+firebase-debug.log

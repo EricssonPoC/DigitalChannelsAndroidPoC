@@ -1,0 +1,214 @@
+apply plugin: Plugins.application
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinExtension
+apply plugin: Plugins.kotlinKapt
+apply plugin: Plugins.ktlintPlugin
+
+def STRING = 'String'
+def REST_ENDPOINT = 'REST_ENDPOINT'
+def IMAGE_BASE_URL = 'IMAGE_BASE_URL'
+def API_KEY = 'API_KEY'
+
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion Configs.compileSdkVersion
+    buildToolsVersion Configs.buildToolsVersion
+
+    defaultConfig {
+        applicationId Configs.package
+        minSdkVersion Configs.minSdkVersion
+        targetSdkVersion Configs.compileSdkVersion
+        versionCode Configs.versionCode
+        versionName Configs.versionName
+        archivesBaseName = "$versionName"
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+
+        /**
+         * This is example api key, you change any of them if you want
+         */
+        buildConfigField STRING, API_KEY, '"35c0f23baf76d98bb700ddb40010b61b"'
+        buildConfigField STRING, IMAGE_BASE_URL, '"https://image.tmdb.org/t/p/w500"'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "12G"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(keystoreProperties['debugStoreFile'])
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+
+            buildConfigField STRING, REST_ENDPOINT, '"https://api.themoviedb.org/3/"'
+            manifestPlaceholders = [dfMoviesApplicationId: Configs.packageName + applicationIdSuffix]
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField STRING, REST_ENDPOINT, '"https://api.themoviedb.org/3/"'
+
+            manifestPlaceholders = [dfMoviesApplicationId: Configs.packageName]
+        }
+    }
+}
+
+ktlint {
+    version = "0.34.2"
+    debug = true
+    verbose = true
+    android = true
+    outputToConsole = true
+    ignoreFailures = true
+    enableExperimentalRules = true
+    additionalEditorconfigFile = file("/some/additional/.editorconfig")
+    disabledRules = ["final-newline"]
+    reporters {
+        reporter "plain"
+        reporter "checkstyle"
+    }
+    kotlinScriptAdditionalPaths {
+        include fileTree("scripts/")
+    }
+    filter {
+        exclude("**/generated/**")
+        include("**/kotlin/**")
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Dependencies.kotlinJdk
+    implementation Dependencies.androidXCore
+    implementation Dependencies.appCompat
+    implementation Dependencies.constraintLayout
+
+    implementation platform(Dependencies.firebaseBoM)
+    implementation Dependencies.firebaseMessaging
+    implementation Dependencies.firebaseAnalytics
+    implementation Dependencies.firebaseCrashlytics
+
+    implementation Dependencies.multidex
+    implementation Dependencies.material
+    implementation Dependencies.stateLayout
+    implementation Dependencies.medusa
+
+    implementation Dependencies.coroutinesAndroid
+    implementation Dependencies.lifeCycleViewModel
+    implementation Dependencies.lifeCycleLiveData
+    implementation Dependencies.lifeCycleRuntime
+    implementation Dependencies.lifeCycleExtension
+    kapt Dependencies.lifeCycleCompiler
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.logInterceptor
+    implementation Dependencies.okHttp
+    implementation Dependencies.gsonConverter
+
+    implementation Dependencies.dagger
+    implementation Dependencies.daggerAndroidSupport
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerAndroidProcessor
+
+    debugImplementation Dependencies.chucker
+    releaseImplementation Dependencies.chuckerNoOp
+
+    implementation Dependencies.paging
+
+    implementation Dependencies.roomRxJava
+    implementation Dependencies.roomRuntime
+    implementation Dependencies.roomKtx
+    kapt Dependencies.roomCompiler
+
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
+
+    implementation Dependencies.sdp
+    implementation Dependencies.ssp
+
+    implementation Dependencies.treeTenABP
+    implementation Dependencies.timber
+
+    implementation Dependencies.rxJava
+    implementation Dependencies.rxAndroid
+    implementation Dependencies.rxBindingMaterial
+
+    implementation Dependencies.roomRxJava
+    implementation Dependencies.roomRuntime
+    implementation Dependencies.roomKtx
+    kapt Dependencies.roomCompiler
+
+    testImplementation Dependencies.truth
+    testImplementation Dependencies.truthExt
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.junitExt
+    testImplementation Dependencies.mockitoCore
+    testImplementation Dependencies.robolectric
+    androidTestImplementation Dependencies.junitExt
+    androidTestImplementation Dependencies.espressoCore
+}
